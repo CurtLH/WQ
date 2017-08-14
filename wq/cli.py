@@ -12,7 +12,7 @@ def load_key(path_to_key):
 
 
 
-def build_request(key, state='VA', city='Arlington'):
+def build_request(key, city='Arlington', state='VA'):
 
     """
     creates the approproiate API query URL
@@ -36,15 +36,20 @@ def get_request(url):
     return r.json()
 
 
-# load API key
-key = load_key("/home/curtis/etc/wunderground")
+@click.command()
+@click.argument('city')
+@click.argument('state')
+def cli(city, state):
 
-# build API request
-url = build_request(key, state='VA', city='Arlington')
+    # load API key
+    key = load_key("/home/curtis/etc/wunderground")
 
-# get results
-r = get_request(url)
+    # build API request
+    url = build_request(key, city=city, state=state)
 
-# print results
-pprint(r)
+    # get results
+    r = get_request(url)
+
+    # print results
+    pprint(r)
 
