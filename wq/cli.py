@@ -30,10 +30,19 @@ def get_request(url):
     fetch the response given the URL
     """
 
-    s = requests.session()
-    r = s.get(url)
+    num_try = 0
+    while num_try < 5:
+        try:
+            s = requests.session()
+            r = s.get(url)
+            return r.json()
+            break
 
-    return r.json()
+        except:
+            num_try += 1
+            sleep(10)
+            
+    pass
 
 
 @click.command()
