@@ -1,6 +1,7 @@
 import click
 import requests
 from pprint import pprint
+from time import sleep
 
 def load_key(path_to_key):
 
