@@ -26,7 +26,6 @@ $ wq --help
 ```
 
 ## Example
----
 
 ```python
 from wq import cli as wq
