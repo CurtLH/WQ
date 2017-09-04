@@ -13,13 +13,18 @@ def load_key(path_to_key):
 
 
 
-def build_request(key, city='Arlington', state='VA'):
+def databases():
+
+    return ['alerts', 'almanac', 'astronomy', 'conditions', 'currenthurricane', 'forecast', 'forecast10day', 'geolookup', 'history', 'hourly', 'hourly10day', 'planner', 'rawtide', 'satellite', 'tide', 'webcams', 'yesterday']
+
+
+def build_request(key, database='conditions', city='Arlington', state='VA'):
 
     """
     creates the approproiate API query URL
     """
 
-    url = "https://api.wunderground.com/api/{}/conditions/q/{}/{}.json".format(key, state, city)
+    url = "https://api.wunderground.com/api/{}/{}/q/{}/{}.json".format(key, database, state, city)
 
     return url
 
@@ -47,15 +52,16 @@ def get_request(url):
 
 
 @click.command()
+@click.option('--database', type=click.Choice(databases()))
 @click.argument('city')
 @click.argument('state')
-def cli(city, state):
+def cli(database, city, state):
 
     # load API key
     key = load_key("/home/curtis/etc/wunderground")
 
     # build API request
-    url = build_request(key, city=city, state=state)
+    url = build_request(key, database, city=city, state=state)
 
     # get results
     r = get_request(url)

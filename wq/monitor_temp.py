@@ -27,7 +27,7 @@ cur.execute("""CREATE TABLE IF NOT EXISTS arlington_weather
 key = wq.load_key("/home/curtis/etc/wunderground")
 
 # build API request
-url = wq.build_request(key, city='Arlington', state='VA')
+url = wq.build_request(key, database='conditions', city='Arlington', state='VA')
 
 # continuously get weather
 while True:
