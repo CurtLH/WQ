@@ -1,8 +1,17 @@
+import logging
 from wq import wunderground as wg
 import psycopg2
 from datetime import datetime
 import json
 from time import sleep
+
+
+# enable logging
+logging.basicConfig(level=logging.INFO,
+                    format='%(asctime)s %(levelname)s %(module)s - %(funcName)s: %(message)s',
+                    datefmt="%Y-%m-%d %H:%M:%S")
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
 
 # connect to the databse
 conn = psycopg2.connect(database="postgres",
@@ -39,3 +48,6 @@ dt_now = datetime.now()
 cur.execute("""INSERT INTO arlington_weather_forecast
                (datetime, forecast) 
                VALUES (%s, %s)""", [dt_now, json.dumps(r)])
+
+# log event
+logger.info("Weather forcast updated")
