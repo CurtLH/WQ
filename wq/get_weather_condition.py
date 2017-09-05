@@ -1,4 +1,4 @@
-import logger
+import logging
 from wq import wunderground as wg
 import psycopg2
 from datetime import datetime
