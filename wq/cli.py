@@ -3,7 +3,7 @@ from wq import wunderground as wg
 from pprint import pprint
 
 @click.command()
-@click.option('--database', type=click.Choice(wg.databases()))
+@click.option('--database', type=click.Choice(wg.databases()), default='conditions')
 @click.argument('city')
 @click.argument('state')
 def cli(database, city, state):
