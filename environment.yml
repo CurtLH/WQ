@@ -1,0 +1,8 @@
+name: wq-dev
+channels:
+  - conda-forge
+dependencies:
+  - python=2.7
+  - ipython
+  - click
+  - requests
