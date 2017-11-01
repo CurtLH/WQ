@@ -1,6 +1,6 @@
 # WQ: Weather Query
 
-![https://img.shields.io/travis/curtlh/wq.svg](https://travis-ci.org/curtlh/wq)
+![https://travis-ci.org/curtlh/wq](https://img.shields.io/travis/curtlh/wq.svg)
 
 Command line interface for querying Wunderground API
 
