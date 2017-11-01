@@ -3,6 +3,7 @@ from setuptools import setup
 requirements = [
 python=2.7,
 pytest,
+pytest-cov,
 pep8,
 autopep8,
 ipython,
