@@ -8,6 +8,10 @@ from pprint import pprint
 @click.argument('state')
 def cli(database, city, state):
 
+    """
+    API Access to Wunderground
+    """
+
     # load API key
     key = wg.load_key("/home/curtis/etc/wunderground")
 
