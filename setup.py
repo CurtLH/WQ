@@ -1,7 +1,13 @@
 from setuptools import setup
 
 requirements = [
-    # package requirements go here
+python=2.7,
+pytest,
+pep8,
+autopep8,
+ipython,
+click,
+request
 ]
 
 setup(
