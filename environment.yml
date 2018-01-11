@@ -2,11 +2,9 @@ name: wq-dev
 channels:
   - conda-forge
 dependencies:
-  - python=2.7
+  - python =2.7
   - pytest
   - pytest-cov
-  - pep8
-  - autopep8
   - ipython
   - click
   - requests

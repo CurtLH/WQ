@@ -17,7 +17,7 @@ logger.setLevel(logging.INFO)
 conn = psycopg2.connect(database="postgres",
                         user="postgres",
                         password="apassword",
-                        host="192.168.0.105",
+                        host="192.168.0.104",
                         port="5432")
 
 # enable autocommit

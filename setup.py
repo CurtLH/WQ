@@ -1,15 +1,5 @@
 from setuptools import setup
 
-requirements = [
-python=2.7,
-pytest,
-pytest-cov,
-pep8,
-autopep8,
-ipython,
-click,
-request
-]
 
 setup(
     name='WQ',
@@ -24,7 +14,7 @@ setup(
             'wq=wq.cli:cli'
         ]
     },
-    install_requires=requirements,
+    install_requires=[],
     keywords='WQ',
     classifiers=[
         'Programming Language :: Python :: 2.7',
