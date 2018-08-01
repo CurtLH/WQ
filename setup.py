@@ -1,9 +1,10 @@
 from setuptools import setup
-
+import versioneer
 
 setup(
     name='WQ',
-    version='0.1.0',
+    version=versioneer.get_version(),
+    cmdclass=versioneer.get_cmdclass(),
     description="Short description",
     author="Curtis Hampton",
     author_email='CurtLHampton@gmail.com',
